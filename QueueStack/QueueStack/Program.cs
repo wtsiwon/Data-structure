@@ -66,7 +66,11 @@ namespace QueueStack
 
         private T Last(List<T> list)
         {
+            T last;
+            for (int i = list.Capacity; i > length; i--)
+            {
 
+            }
         }
 
         /// <summary>
