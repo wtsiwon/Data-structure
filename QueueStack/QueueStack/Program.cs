@@ -10,14 +10,7 @@ namespace QueueStack
     {
         static void Main(string[] args)
         {
-            Queue<int> queue = new Queue<int>();
 
-            queue.Enqueue(1);
-            queue.Enqueue(2);
-            queue.Enqueue(3);
-            queue.Enqueue(4);
-
-            int a = queue.First();
         }
     }
 
@@ -39,6 +32,19 @@ namespace QueueStack
             queue.Add(t);
         }
 
+        private void Add(T item)
+        {
+            if(count == queue.Capacity)
+            {
+                EnsureCapacity();
+            }
+        }
+
+        private void EnsureCapacity()
+        {
+
+        }
+
         /// <summary>
         /// Queue<T>에서 시작부분에서 개체를 제거하고 반환합니다
         /// </summary>
@@ -47,51 +53,41 @@ namespace QueueStack
         {
             T t = First(queue);
             RemoveAt(0);
-
             return t;
         }
 
-        private void RemoveAt(int index)                                                                  
+        private void RemoveAt(int index)
         {
-            Array.Copy(queue, index  + 1, queue, index, queue.Capacity - index);
+            Array.Copy(queue, index + 1, queue, index, queue.Capacity - index);
             queue[queue.Count - 1] = default;
         }
 
-        
-
-        private T First(List<T> list)
+        private T First()
         {
             T first;
-            for (int i = 0; i < list.Capacity; i++)
+            if (queue.Count > 0)
             {
-                if (list[i] == null)
-                {
-                    continue;
-                }
-                else
-                {
-                    first = list[i];
-                    return first;
-                }
+                first = queue[0];
+                return first;
             }
-            return default;
+            else
+            {
+                throw new NullReferenceException();
+            }
         }
 
-        private T Last(this list)
+        private T Last()
         {
             T last;
-            for (int i = list.Capacity; i > length; i--)
+            if (queue != null)
             {
-                if (list[i] == null)
-                {
-                    continue;
-                }
-                else
-                {
-                    last = list[i];
-                }
+                last = queue[queue.Count - 1];
+                return last;
             }
-            return last;
+            else
+            {
+                throw new NullReferenceException();
+            }
         }
 
         /// <summary>
@@ -101,9 +97,9 @@ namespace QueueStack
         {
             queue.Clear();
             for (int i = 0; i < queue.Count; i++)
-			{
+            {
                 queue[i] = default;
-			}
+            }
         }
 
         /// <summary>
@@ -122,7 +118,7 @@ namespace QueueStack
         /// <returns></returns>
         public T Peek()
         {
-            T t = queue.First();
+            T t = First();
             return t;
         }
     }
