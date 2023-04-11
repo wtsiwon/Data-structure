@@ -16,8 +16,8 @@ namespace QueueStack
             queue.Enqueue(2);
             queue.Enqueue(3);
             queue.Enqueue(4);
+
             int a = queue.First();
-            Console.WriteLine(a);
         }
     }
 
@@ -46,10 +46,18 @@ namespace QueueStack
         public T Dequeue()
         {
             T t = First(queue);
-            queue.RemoveAt(0);
+            RemoveAt(0);
 
             return t;
         }
+
+        private void RemoveAt(int index)                                                                  
+        {
+            Array.Copy(queue, index  + 1, queue, index, queue.Capacity - index);
+            queue[queue.Count - 1] = default;
+        }
+
+        
 
         private T First(List<T> list)
         {
@@ -91,8 +99,11 @@ namespace QueueStack
         /// </summary>
         public void Clear()
         {
-            //queue.Clear();
-            queue.Capacity = 0;
+            queue.Clear();
+            for (int i = 0; i < queue.Count; i++)
+			{
+                queue[i] = default;
+			}
         }
 
         /// <summary>
