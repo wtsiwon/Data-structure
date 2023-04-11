@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QueueStack"
   ],
+  "SelectedNode": "\\QueueStack\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

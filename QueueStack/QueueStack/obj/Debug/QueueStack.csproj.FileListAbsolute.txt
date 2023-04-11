@@ -6,3 +6,8 @@ C:\Users\USER-PC\source\repos\QueueStack\QueueStack\obj\Debug\QueueStack.csproj.
 C:\Users\USER-PC\source\repos\QueueStack\QueueStack\obj\Debug\QueueStack.csproj.CoreCompileInputs.cache
 C:\Users\USER-PC\source\repos\QueueStack\QueueStack\obj\Debug\QueueStack.exe
 C:\Users\USER-PC\source\repos\QueueStack\QueueStack\obj\Debug\QueueStack.pdb
+C:\Users\msi\Data-structure\QueueStack\QueueStack\obj\Debug\QueueStack.csproj.AssemblyReference.cache
+C:\Users\msi\Data-structure\QueueStack\QueueStack\obj\Debug\QueueStack.csproj.SuggestedBindingRedirects.cache
+C:\Users\msi\Data-structure\QueueStack\QueueStack\obj\Debug\QueueStack.csproj.CoreCompileInputs.cache
+C:\Users\msi\Data-structure\QueueStack\QueueStack\obj\Debug\QueueStack.exe
+C:\Users\msi\Data-structure\QueueStack\QueueStack\obj\Debug\QueueStack.pdb

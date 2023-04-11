@@ -10,7 +10,14 @@ namespace QueueStack
     {
         static void Main(string[] args)
         {
-            
+            Queue<int> queue = new Queue<int>();
+
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+            int a = queue.First();
+            Console.WriteLine(a);
         }
     }
 
@@ -38,9 +45,7 @@ namespace QueueStack
         /// <returns></returns>
         public T Dequeue()
         {
-            
-
-            T t = queue.First();
+            T t = First(queue);
             queue.RemoveAt(0);
 
             return t;
@@ -64,13 +69,21 @@ namespace QueueStack
             return default;
         }
 
-        private T Last(List<T> list)
+        private T Last(this list)
         {
             T last;
             for (int i = list.Capacity; i > length; i--)
             {
-
+                if (list[i] == null)
+                {
+                    continue;
+                }
+                else
+                {
+                    last = list[i];
+                }
             }
+            return last;
         }
 
         /// <summary>
