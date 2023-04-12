@@ -39,12 +39,17 @@ namespace QueueStack
 
     public class Queue<T>
     {
-        List<T> queue = new List<T>();
+        private const int defaultCount = 4;
 
-        public int count
+        T[] queue = new T[defaultCount];
+
+
+        public int Count
         {
-            get => queue.Count;
+            get => queue.Length;
         }
+
+        public int Capacity;
 
         /// <summary>
         /// Queue<T>의 끝 부분에 개체를 추가합니다
@@ -57,7 +62,7 @@ namespace QueueStack
 
         private void Add(T item)
         {
-            if(count == queue.Capacity)
+            if(count == queue.Length)
             {
                 EnsureCapacity();
             }
@@ -65,7 +70,9 @@ namespace QueueStack
 
         private void EnsureCapacity()
         {
-
+            Array.Copy()
+            T[] newQueue = new T[count * 2];
+            newQueue = queue;
         }
 
         /// <summary>
