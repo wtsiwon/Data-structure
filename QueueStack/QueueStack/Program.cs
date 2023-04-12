@@ -10,8 +10,31 @@ namespace QueueStack
     {
         static void Main(string[] args)
         {
+            int[] datas = new int[15];
+            for (int i = 0; i < datas.Length; i++)
+			{
+                int random = Random.Next(0, 100);
+                datas[i] = Random.Next(0, 100);
+
+			}
 
         }
+
+        static void QuickSort(int[] datas)
+        {
+            int left = 0;//왼쪽 끝 index
+            int right = datas.Length - 1;//오른쪽 끝 index
+
+            int pivot = (left + right) / 2;
+
+            //pivot을 기준으로 정렬
+
+            
+            
+        }
+
+
+
     }
 
     public class Queue<T>
@@ -95,7 +118,7 @@ namespace QueueStack
         /// </summary>
         public void Clear()
         {
-            queue.Clear();
+            //queue.Clear();
             for (int i = 0; i < queue.Count; i++)
             {
                 queue[i] = default;
@@ -109,7 +132,14 @@ namespace QueueStack
         /// <returns></returns>
         public bool Contains(T t)
         {
-            return queue.Contains(t);
+            for (int i = 0; i < queue.Count; i++)
+			{
+                if (queue[i] == t)
+                {
+                    return true;
+                }
+			}
+            return false;
         }
 
         /// <summary>
