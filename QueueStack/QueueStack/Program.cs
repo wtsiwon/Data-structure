@@ -54,9 +54,7 @@ namespace QueueStack
 
         private void EnsureCapacity()
         {
-            Array.Copy()
-            T[] newQueue = new T[count * 2];
-            newQueue = queue;
+            //Array.Copy(queue, 0, queue, queue.Length, )
         }
 
         /// <summary>
