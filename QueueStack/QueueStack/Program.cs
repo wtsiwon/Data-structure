@@ -19,22 +19,6 @@ namespace QueueStack
 			}
 
         }
-
-        static void QuickSort(int[] datas)
-        {
-            int left = 0;//왼쪽 끝 index
-            int right = datas.Length - 1;//오른쪽 끝 index
-
-            int pivot = (left + right) / 2;
-
-            //pivot을 기준으로 정렬
-
-            
-            
-        }
-
-
-
     }
 
     public class Queue<T>
