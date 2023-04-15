@@ -46,7 +46,7 @@ namespace QueueStack
 
         private void Add(T item)
         {
-            if(count == queue.Length)
+            if(Count == queue.Length)
             {
                 EnsureCapacity();
             }
@@ -63,7 +63,7 @@ namespace QueueStack
         /// <returns></returns>
         public T Dequeue()
         {
-            T t = First(queue);
+            T t = First();
             RemoveAt(0);
             return t;
         }
